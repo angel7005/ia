@@ -1,6 +1,6 @@
 # Hackathon de IA de NataSquad
-# Problema de machine learning
-# Problema 1 Customer Churn.
+## Problema de machine learning
+### Problema 1 Customer Churn.
 
 ## Introducción
 
