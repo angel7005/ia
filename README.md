@@ -64,10 +64,10 @@ Se observan muchas variables categoricas, con las que los modelos no pueden trab
        Se tranforman en valores numéricas.
 
 ## Datos de entrenamiento y pruebas
-Los datos de separaron los primeris 90% para entrenamiento y el ultimo 10% para prueba. Ahora el 90% de entrenamiento se le dio a GridSearchCV, se probó con 5, 7 y 9 particiones sobre el que se ajustaron los parámetros del modelo
+Los datos de separaron los primeros 90% para entrenamiento y el ultimo 10% para prueba. Ahora el 90% de entrenamiento se le dio a GridSearchCV, se probó con 5, 7 y 9 particiones sobre el que se ajustaron los parámetros del modelo
 
 ## Seleccionar modelo y ajustar parámetros
-Se crea un cuaderno por cada modelo donde se van a optimizar sus parámetros. Utilizando GridSearchCV
+Se crea un cuaderno por cada modelo donde se van a optimizar sus parámetros. Utilizando GridSearchCV.
 
 ### RandomForest
 Cuaderno ns-3.1.1-modelo-RandomForest.ipynb
@@ -130,7 +130,7 @@ RandomForest y LogisticRegression. Modelos con mejores resultados.
 
 3- Se trabajo implicitamente con Validación cruzada en el ajuste de los parámetros de los modelo. 
 
-4- Personalmente no estoy satisfecho con la capacidad de discriminacion del modelo LogisticRegression, pero teniendo 
+4- Personalmente no estoy satisfecho con la capacidad de discriminación del modelo LogisticRegression, pero teniendo 
 encuenta la muestra y las condiciones de la misma es un buen punto de partida para enfrentar el problema propuesto.
 
 5- Entre las variables mas relevantes que ayudan a clasificar a un cliente estan el tipo de contrato, el pago mensual,
@@ -138,8 +138,7 @@ el tiempo en la empresa y la seguridad online.
 
 ## Recomendaciones
 
-1- Depurar un poco mas el conjunto de datos con que se entrenaron los modelos. Identificar los falsos positivos que 
-estan mas próximo del umbra de clasificación, de ser posible realizar encuestas de satisfacción a esos clientes.
+1- Depurar un poco más el conjunto de datos con que se entrenaron los modelos. Identificar los falsos positivos que estan mas próximo del umbral de clasificación, de ser posible realizar encuestas de satisfacción a estos clientes.
 
 2- Profundizar en la teoría, ventajas y desventajas de los modelos utizados, asi como su adaptación al problema planteado.
 
