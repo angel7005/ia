@@ -4,7 +4,7 @@
 * [Introduccion](#Introducción)
 * [Solución](#Solución)
 * [Preparación y depuración de los datos](#Preparación-y-depuración-de-los-datos)
-* [Datos de entrenamiento y pruebas](#Datos de entrenamiento-y-pruebas)
+* [Datos de entrenamiento y pruebas](#Datos-de-entrenamiento-y-pruebas)
 * [Seleccionar modelo y ajustar parámetros](#Seleccionar-modelo-y-ajustar-parámetros)
 	* [RandomForest](#RandomForest)
 	* [Gradiente Boosting](#Gradiente-Boosting)
