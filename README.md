@@ -63,15 +63,10 @@ algoritmo RandomForest y la clase GridSearchCV que es una técnica de ajuste de 
 ## Preparación y depuración de los datos
 Al cargarse los datos se encuentran valores omitidos en la penúltima columna "TotalCharge". 
 
-
-Cargos totales vacíos, los pongo a 0.0
-	 	los visualice y coincide con que:
-	 	a) La variable tenure es "0",  el número de meses(tenure) que el cliente
- 		  ha estado en la empresa es cero.
- 		b) La variable Churn tienen valor "No", Por lo que se deduce
- 		que no ha tenido tiempo de cobrar la mensualidad o no han podido pagar aun.
- 		c) Dado que la muestra esta sesgada a la clase 'No', pudiera simplemente no incluirla en el entrenamiento e incluirla en la 
- 		submuestra de prueba. Pero asocie a estos clientes como clientes recien incorporados al sistema.
+* Cargos totales vacíos, los pongo a 0.0, los visualice y coincide con que:
+	* a) La variable tenure es "0",  el número de meses(tenure) que el cliente  ha estado en la empresa es cero.
+	* b) La variable Churn tienen valor "No", Por lo que se deduce que no ha tenido tiempo de cobrar la mensualidad o no han podido pagar aun.
+	* c) Dado que la muestra esta sesgada a la clase 'No', pudiera simplemente no incluirla en el entrenamiento e incluirla en la submuestra de prueba. Pero asocie a estos clientes como clientes recien incorporados al sistema.
     
 Se observan muchas variables categoricas, con las que los modelos no pueden trabajar.
        Se tranforman en valores numéricas.
@@ -110,39 +105,38 @@ En el cuaderno ns-4-comparacion.ipynb se muestra un grafico de lineas, asociado 
 modelos. Se puede ver que el clasificador MLP es el que mejor minimina la deteccion de falsos positivos, pero no es tan bueno para los positivos
 
 
-
-
 ## Hacer predicciones
 En cada cuaderno asociado a los modelos se muestran gráficas de las predicciones. En el cuaderno ns-4-comparacion.ipynb 
 
-Algoritmo  			clase      	precision    recall  	f1-score   support
-
-LogisticRegresion           0    		0.8971    	0.7382    	0.8099       508
-           			1     		0.5333    	0.7795    	0.6333       195
+|   Algoritmo       |  Clase | Precision | Recall | f1-score |  support |
+| ----------------- | ------ | --------- | ------ | -------- | -------- |
+| LogisticRegresion |   0    |    0.8971 | 0.7382 |   0.8099 |      508 |
+|		    |   1    |    0.5333 | 0.7795 |   0.6333 |      195 |
 
 
 se muestran las variables mas relevantes encontradas por RandomForest.
 
-           variable  importancia
-14          Contract     0.170747
-17    MonthlyCharges     0.159277
-18      TotalCharges     0.154168
-4             tenure     0.151599
-8     OnlineSecurity     0.053782
-11       TechSupport     0.045133
-16     PaymentMethod     0.044922
-7    InternetService     0.035698
-15  PaperlessBilling     0.021422
-9       OnlineBackup     0.021016
-0             gender     0.021005
-13   StreamingMovies     0.019183
-6      MultipleLines     0.018310
-3         Dependents     0.017627
-2            Partner     0.016953
-10  DeviceProtection     0.016598
-12       StreamingTV     0.015608
-1      SeniorCitizen     0.012041
-5       PhoneService     0.004911
+|  No. |      Variable       | Importancia  |
+| ---- | ------------------  | ------------ |
+|  14  |  Contract           |     0.170747 |
+|  17  |  MonthlyCharges     |     0.159277 |
+|  18  |  TotalCharges       |     0.154168 |
+|   4  |  tenure             |     0.151599 |
+|   8  |  OnlineSecurity     |     0.053782 |
+|  11  |  TechSupport        |     0.045133 |
+|  16  |  PaymentMethod      |     0.044922 |
+|   7  |  InternetService    |     0.035698 |
+|  15  |  PaperlessBilling   |     0.021422 |
+|   9  |  OnlineBackup       |     0.021016 |
+|   0  |  gender             |     0.021005 |
+|  13  |  StreamingMovies    |     0.019183 |
+|   6  |  MultipleLines      |     0.018310 |
+|   3  |  Dependents         |     0.017627 |
+|   2  |  Partner            |     0.016953 |
+|  10  |  DeviceProtection   |     0.016598 |
+|  12  |  StreamingTV        |     0.015608 |
+|   1  |  SeniorCitizen      |     0.012041 |
+|   5  |  PhoneService       |     0.004911 |
 
 ## Comparaciones entre modelos
 En el cuaderno ns-4-comparacion.ipynb se ejecutan los 5 algorimos vistos anteriormente con los parametros ya ajustados.
