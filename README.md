@@ -1,10 +1,23 @@
-﻿# Hackathon de IA de NataSquad
-## Problema de machine learning
-### Problema 1 Customer Churn.
 
-https://hackathon.natasquad.com/
+#### Contents
 
-https://github.com/Natasquad-Hack/NataSquad-AI-Hackathon
+* [Introduccion](#Introducción)
+* [Solución](#Solución)
+* [Preparación y depuración de los datos](#Preparación-y-depuración-de-los-datos)
+* [Datos de entrenamiento y pruebas](#Datos de entrenamiento y pruebas)
+* [Seleccionar modelo y ajustar parámetros](#Seleccionar modelo y ajustar parámetros)
+	* [RandomForest](#RandomForest)
+	* [Gradiente Boosting](#Gradiente Boosting)
+	* [MLPClassifier](#MLPClassifier)
+	* [Regresion logistica](#Regresion logistica)
+* [Entrenar modelo](#Entrenar modelo)
+* [Evaluar rendimiento](#Evaluar rendimiento)
+* [Hacer predicciones](#Hacer predicciones)
+* [Comparaciones entre modelos](#Comparaciones entre modelos)
+* [Conclusiones](#Conclusiones)
+* [Recomendaciones](#Recomendaciones)
+* [Bibliografía](#Bibliografía)
+
 
 ## Introducción
 
@@ -90,11 +103,26 @@ En el cuaderno  ns-4-comparacion.ipynb se entrenan los modelos con los parámetr
 ## Evaluar rendimiento
 En cada cuaderno asociado a los modelos se imprimen reportes de clasificación con accuracy, precisión, recall, f1;
 matriz de confusión, roc-auc curvas. La optimización de los parametros de los modelos se baso en la métrica f1 debido, como ya
-se mensiono anteriormente, al desbalance de la muestra a favor de la clase 'No'
+se mensiono anteriormente, al desbalance de la muestra a favor de la clase 'No', favoreciendo f1 a las clases postivias , 
+minoritaria en nuestro caso.
+
+En el cuaderno ns-4-comparacion.ipynb se muestra un grafico de lineas, asociado a la metricas ROC-AUC, donde se comparan los cinco
+modelos. Se puede ver que el clasificador MLP es el que mejor minimina la deteccion de falsos positivos, pero no es tan bueno para los positivos
+
+
+
 
 ## Hacer predicciones
 En cada cuaderno asociado a los modelos se muestran gráficas de las predicciones. En el cuaderno ns-4-comparacion.ipynb 
+
+Algoritmo  			clase      	precision    recall  	f1-score   support
+
+LogisticRegresion           0    		0.8971    	0.7382    	0.8099       508
+           			1     		0.5333    	0.7795    	0.6333       195
+
+
 se muestran las variables mas relevantes encontradas por RandomForest.
+
            variable  importancia
 14          Contract     0.170747
 17    MonthlyCharges     0.159277
