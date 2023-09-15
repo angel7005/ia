@@ -21,10 +21,7 @@
 
 ## Introducción
 
-Para una familiarizacion con el problema leer el documento Customer_Churn.md, lo mismo en la carpeta actual que en el projecto 
-https://github.com/Natasquad-Hack/NataSquad-AI-Hackathon/blob/main/1_Machine_Learning/1_Customer_Churn/Customer_Churn.md
-
-En las mismas referencias puede ser encontrado el archivo archive.zip con el juego de datos. En el se puede observar el cliente, las variables predictoras y la variable objetico(Churn). Un poco más de 7000 instancias de clientes.
+Para una familiarizacion con el problema leer el documento Customer_Churn.md, en la carpeta actual. tambien puede ser encontrado el archivo archive.zip con el juego de datos. En el se puede observar el cliente, las variables predictoras y la variable objetico(Churn). Un poco más de 7000 instancias de clientes.
 
 Entre las variables predictoras hay variables de tipo boolean, categoricas, enteras y continúas. Menos de 20 variables.
 
