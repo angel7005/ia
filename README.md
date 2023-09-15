@@ -21,7 +21,7 @@
 
 ## Introducción
 
-Para una familiarizacion con el problema leer el documento Customer_Churn.md, en la carpeta actual. tambien puede ser encontrado el archivo archive.zip con el juego de datos. En el se puede observar el cliente, las variables predictoras y la variable objetico(Churn). Un poco más de 7000 instancias de clientes.
+Para una familiarizacion con el problema a resolver leer el documento Customer_Churn.md, en la carpeta actual. tambien puede ser encontrado el archivo archive.zip con el juego de datos. En el se puede observar el cliente, las variables predictoras y la variable objetico(Churn). Un poco más de 7000 instancias de clientes.
 
 Entre las variables predictoras hay variables de tipo boolean, categoricas, enteras y continúas. Menos de 20 variables.
 
@@ -69,10 +69,10 @@ Se observan muchas variables categoricas, con las que los modelos no pueden trab
        Se tranforman en valores numéricas.
 
 ## Datos de entrenamiento y pruebas
-Los datos de separaron los primeros 90% para entrenamiento y el ultimo 10% para prueba. Ahora el 90% de entrenamiento se le dio a GridSearchCV, se probó con 5, 7 y 9 particiones sobre el que se ajustaron los parámetros del modelo
+Los datos de separaron los primeros 90% para entrenamiento y el ultimo 10% para prueba. Ahora el 90% de entrenamiento se le dio a GridSearchCV, utilizando validación cruzada con 5, 7 y 9 particiones sobre el que se ajustaron los parámetros del modelo
 
 ## Seleccionar modelo y ajustar parámetros
-Se crea un cuaderno por cada modelo donde se van a optimizar sus parámetros. Utilizando GridSearchCV.
+Se crea un cuaderno por cada modelo donde se van a optimizar sus parámetros. Utilizando GridSearchCV. Para luego comparar sus resultados.
 
 ### RandomForest
 Cuaderno ns-3.1.1-modelo-RandomForest.ipynb
