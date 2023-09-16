@@ -1,4 +1,4 @@
-
+﻿
 #### Contents
 
 * [Introduccion](#Introducción)
@@ -99,8 +99,7 @@ se mensiono anteriormente, al desbalance de la muestra a favor de la clase 'No',
 minoritaria en nuestro caso.
 
 En el cuaderno ns-4-comparacion.ipynb se muestra un grafico de lineas, asociado a la metricas ROC-AUC, donde se comparan los cinco
-modelos. Se puede ver que el clasificador MLP es el que mejor minimina la deteccion de falsos positivos, pero no es tan bueno para los positivos
-
+modelos. Se puede ver que el clasificador MLP es el que mejor minimiza la deteccion de falsos positivos, pero no es tan bueno para los positivos
 
 ## Hacer predicciones
 En cada cuaderno asociado a los modelos se muestran gráficas de las predicciones. En el cuaderno ns-4-comparacion.ipynb 
@@ -108,8 +107,9 @@ En cada cuaderno asociado a los modelos se muestran gráficas de las prediccione
 |   Algoritmo       |  Clase | Precision | Recall | f1-score |  support |
 | ----------------- | ------ | --------- | ------ | -------- | -------- |
 | LogisticRegresion |   0    |    0.8971 | 0.7382 |   0.8099 |      508 |
-|		    |   1    |    0.5333 | 0.7795 |   0.6333 |      195 |
-
+|	            |   1    |    0.5333 | 0.7795 |   0.6333 |      195 |
+| RandomForest      |   0    |    0.8595 | 0.8071 |   0.6081 |      508 |
+|                   |   1    |    0.5664 | 0.6564 |   0.6081 |      195 |
 
 se muestran las variables mas relevantes encontradas por RandomForest.
 
@@ -136,9 +136,22 @@ se muestran las variables mas relevantes encontradas por RandomForest.
 |   5  |  PhoneService       |     0.004911 |
 
 ## Comparaciones entre modelos
-En el cuaderno ns-4-comparacion.ipynb se ejecutan los 5 algorimos vistos anteriormente con los parametros ya ajustados.
-Se calculan y comparan las metricas f1 y roc-auc. El modelo de LogisticRegression es el que mejor resultado muestra 
-para la clasificación
+En el cuaderno ns-4-comparacion.ipynb se ejecutan los 5 algorimos vistos anteriormente con los parametros ya ajustados. 
+Se calculan y comparan las metricas f1 y roc-auc. El modelo de RandomForest muestra un mejor resultado para la clasificación, 
+a partir  de la comparacion de la siguiente tabla:
+
+|       Modelo    |    f1    |  roc_auc |
+| --------------- | -------- | -------- |
+| RandomForest    | 0.647826 | 0.767878 |
+| GradientBoost   | 0.603550 | 0.721184 |
+| MLPClassifier   | 0.555911 | 0.692565 |
+| SVC             | 0.563981 | 0.698829 |
+| RegressionLog   | 0.629423 | 0.763058 |
+
+
+En el cuaderno tambien se mustran graficos de barra para comparar ambas metricas por separado. Y se plotea un grafico de 
+linea la curva roc-auc para cada algoritmo.
+
 
 ## Conclusiones
 1- Se trabajo con una muestra desbalanceada a favor de los casos negativos. Muestra que no se pudo remuestrear. Por ello
