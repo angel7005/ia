@@ -21,7 +21,12 @@
 
 ## Introducción
 
-Para una familiarizacion con el problema a resolver leer el documento Customer_Churn.md, en la carpeta actual. tambien puede ser encontrado el archivo archive.zip con el juego de datos. En el se puede observar el cliente, las variables predictoras y la variable objetico(Churn). Un poco más de 7000 instancias de clientes.
+La rotación de clientes, conocida como "Churn", es un fenómeno que ocurre cuando un cliente decide terminar su relación con una empresa. 
+Esto puede suceder por una variedad de razones, desde la insatisfacción con un producto o servicio, hasta el atractivo de la competencia. 
+En este ejercicio parte del  hackatón de NataSquad 2023, nos centraremos en el problema del churn en una empresa anónima, 
+cuyo objetivo es predecir el comportamiento de los clientes para retenerlos.
+
+Para una familiarizacion con el problema leer el documento Customer_Churn.md, en la carpeta actual. tambien puede ser encontrado el archivo archive.zip con el juego de datos. En el se puede observar el cliente, las variables predictoras y la variable objetivo (Churn). Un poco más de 7000 instancias de clientes.
 
 Entre las variables predictoras hay variables de tipo boolean, categoricas, enteras y continúas. Menos de 20 variables.
 
@@ -65,8 +70,11 @@ Al cargarse los datos se encuentran valores omitidos en la penúltima columna "T
 	* b) La variable Churn tienen valor "No", Por lo que se deduce que no ha tenido tiempo de cobrar la mensualidad o no han podido pagar aun.
 	* c) Dado que la muestra esta sesgada a la clase 'No', pudiera simplemente no incluirla en el entrenamiento e incluirla en la submuestra de prueba. Pero asocie a estos clientes como clientes recien incorporados al sistema.
     
-Se observan muchas variables categoricas, con las que los modelos no pueden trabajar.
-       Se tranforman en valores numéricas.
+Se observan muchas variables categoricas, con las que los modelos no pueden trabajar. Se tranforman en valores numéricas.
+
+Se hace una analisis estadistico muy superficial: cantidad, media, desviacion estandar, minimo, maximo, percentiles...
+que pendiente refinar un cuaderno con un analisis mas profundo donde se utilizan otros estadigrafos como la correlacion, tablas de contengencia, chi cuadrado.., etc. y subirlo al repositorio.
+
 
 ## Datos de entrenamiento y pruebas
 Los datos de separaron los primeros 90% para entrenamiento y el ultimo 10% para prueba. Ahora el 90% de entrenamiento se le dio a GridSearchCV, utilizando validación cruzada con 5, 7 y 9 particiones sobre el que se ajustaron los parámetros del modelo
@@ -104,40 +112,40 @@ modelos. Se puede ver que el clasificador MLP es el que mejor minimiza la detecc
 ## Hacer predicciones
 En cada cuaderno asociado a los modelos se muestran gráficas de las predicciones. En el cuaderno ns-4-comparacion.ipynb 
 
-|   Algoritmo       |  Clase | Precision | Recall | f1-score |  support |
-| ----------------- | ------ | --------- | ------ | -------- | -------- |
-| LogisticRegresion |   0    |    0.8971 | 0.7382 |   0.8099 |      508 |
-|	            |   1    |    0.5333 | 0.7795 |   0.6333 |      195 |
-| RandomForest      |   0    |    0.8595 | 0.8071 |   0.6081 |      508 |
-|                   |   1    |    0.5664 | 0.6564 |   0.6081 |      195 |
+|   Algoritmo       |  Clase | Accuracy  | Precision | Recall | f1-score |  support |
+| ----------------- | ------ | --------- | --------- | ------ | -------- | -------- |
+| LogisticRegresion |   0    |    0.7169 |    0.9280 | 0.6594 |   0.7710 |      508 |
+|	            |   1    |      ---  |    0.8667 | 0.8667 |   0.6294 |      195 |
+| RandomForest      |   0    |    0.7710 |    0.8970 | 0.7717 |   0.8296 |      508 |
+|                   |   1    |      ---  |    0.5639 | 0.7692 |   0.6508 |      195 |
 
 se muestran las variables mas relevantes encontradas por RandomForest.
 
-|  No. |      Variable       | Importancia  |
+|  No. |      Variable       |  Importancia |
 | ---- | ------------------  | ------------ |
-|  14  |  Contract           |     0.170747 |
-|  17  |  MonthlyCharges     |     0.159277 |
-|  18  |  TotalCharges       |     0.154168 |
-|   4  |  tenure             |     0.151599 |
-|   8  |  OnlineSecurity     |     0.053782 |
-|  11  |  TechSupport        |     0.045133 |
-|  16  |  PaymentMethod      |     0.044922 |
-|   7  |  InternetService    |     0.035698 |
-|  15  |  PaperlessBilling   |     0.021422 |
-|   9  |  OnlineBackup       |     0.021016 |
-|   0  |  gender             |     0.021005 |
-|  13  |  StreamingMovies    |     0.019183 |
-|   6  |  MultipleLines      |     0.018310 |
-|   3  |  Dependents         |     0.017627 |
-|   2  |  Partner            |     0.016953 |
-|  10  |  DeviceProtection   |     0.016598 |
-|  12  |  StreamingTV        |     0.015608 |
-|   1  |  SeniorCitizen      |     0.012041 |
-|   5  |  PhoneService       |     0.004911 |
+|  14  |  Contract           |     0.445149 |
+|   8  |  OnlineSecurity     |     0.125381 |
+|   4  |  tenure             |     0.107268 |
+|  11  |  TechSuppor         |     0.092321 |
+|  17  |  MontlyCharges      |     0.084935 |
+|  18  |  TotalCharges       |     0.057305 |
+|   7  |  InternetService    |     0.036901 |
+|  13  |  StreamingMovies    |     0.009745 |
+|   9  |  OnlineBackUp       |     0.009665 |
+|  16  |  PaymentMethod      |     0.008489 |
+|  12  |  StreamingTV        |     0.005629 |
+|  15  |  PaperlessBilling   |     0.004720 |
+|  10  |  DeviceProtection   |     0.002775 |
+|   5  |  PhoneServie        |     0.002462 |
+|   1  |  SeniorCitizen      |     0.002301 |
+|   6  |  MultipleLines      |     0.002114 |
+|   3  |  Dependents         |     0.001036 |
+|   0  |  gender             |     0.001007 |
+|   2  |  Partner            |     0.000798 |
 
 ## Comparaciones entre modelos
 En el cuaderno ns-4-comparacion.ipynb se ejecutan los 5 algorimos vistos anteriormente con los parametros ya ajustados. 
-Se calculan y comparan las metricas f1 y roc-auc. El modelo de RandomForest muestra un mejor resultado para la clasificación, 
+Se calculan, comparan y grafican las metricas f1 y roc-auc. El modelo de RandomForest muestra un mejor resultado para la clasificación, 
 a partir  de la comparacion de la siguiente tabla:
 
 |       Modelo    |    f1    |  roc_auc |
@@ -149,7 +157,7 @@ a partir  de la comparacion de la siguiente tabla:
 | RegressionLog   | 0.629423 | 0.763058 |
 
 
-En el cuaderno tambien se mustran graficos de barra para comparar ambas metricas por separado. Y se plotea un grafico de 
+En el cuaderno tambien se muestran graficos de barra para comparar ambas metricas por separado. Y se plotea un grafico de 
 linea la curva roc-auc para cada algoritmo.
 
 
