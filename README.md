@@ -1,22 +1,22 @@
 ﻿#### Contents
 
-* [Introducción](#Introducción)
-* [Solución](#Solución)
-* [Preparación y depuración de los datos](#Preparación-y-depuración-de-los-datos)
-* [Datos de entrenamiento y pruebas](#Datos-de-entrenamiento-y-pruebas)
-* [Seleccionar modelo y ajustar parámetros](#Seleccionar-modelo-y-ajustar-parámetros)
-	* [RandomForest](#RandomForest)
-	* [Gradiente Boosting](#Gradiente-Boosting)
-	* [MLPClassifier](#MLPClassifier)
-	* [Regresión logística](#Regresion-logistica)
-* [Entrenar modelo](#Entrenar-modelo)
-* [Evaluar rendimiento](#Evaluar-rendimiento)
-* [Hacer predicciones](#Hacer-predicciones)
-* [Comparaciones entre modelos](#Comparaciones-entre-modelos)
-* [Conclusiones](#Conclusiones)
-* [Recomendaciones](#Recomendaciones)
-* [Bibliografía](#Bibliografía)
-
+1. [Introducción](#Introducción)
+2. [Solución](#Solución)
+3. [Preparación y depuración de los datos](#Preparación-y-depuración-de-los-datos)
+4. [Datos de entrenamiento y pruebas](#Datos-de-entrenamiento-y-pruebas)
+5. [Seleccionar modelo y ajustar parámetros](#Seleccionar-modelo-y-ajustar-parámetros)
+	5.1. [RandomForest](#RandomForest)
+	5.2. [Gradiente Boosting](#Gradiente-Boosting)
+	5.3. [MLPClassifier](#MLPClassifier)
+        5.4. [SVC](#Cuaderno ns-3.1.4-modelo-SVC.ipynb)
+	5.4. [Regresión logística](#Regresion-logistica)
+6. [Entrenar modelo](#Entrenar-modelo)
+7. [Evaluar rendimiento](#Evaluar-rendimiento)
+8. [Hacer predicciones](#Hacer-predicciones)
+9. [Comparaciones entre modelos](#Comparaciones-entre-modelos)
+10. [Conclusiones](#Conclusiones)
+11. [Recomendaciones](#Recomendaciones)
+12. [Bibliografía](#Bibliografía)
 
 ## Introducción
 
@@ -27,25 +27,16 @@ cuyo objetivo es predecir el comportamiento de los clientes para retenerlos.
 
 Para una familiarización con el problema leer el documento Customer_Churn.md, en la carpeta actual. también puede ser encontrado el archivo archive.zip con el juego de datos. En él se puede observar el cliente, las variables predictoras y la variable objetivo (Churn). Un poco más de 7000 instancias de clientes.
 
-Entre las variables predictoras hay variables de tipo booleano, categóricas, enteras y continúas. Menos de 20 variables.
-
-La variable objetivo (churn) tiene dos valores válidos: No, Yes. Nos interesa predecir a los clientes con valor 'Yes', que abandonarán la empresa.
-De la observación de los datos proporcionados se observa una muestra sesgada o con desbalance a favor de la clase negativa 'No', con más del 75%. 
-
-Esto puede dificultar el aprendizaje del modelo al contar con pocos clientes con valor 'Yes' en la variable objetivo, en comparación 
-con el valor 'No' que es la clase mayoritaria
-
 La selección de variables con ayuda del especialista puede ayudar a depurar la muestra de clientes suministrada,
-comenzando por los falsos positivos y próximo a la frontera o al umbral de clasificación según el modelo
+comenzando por los falsos positivos y próximo a la frontera o al umbral de clasificación según el modelo.
 
 Encontrar las variables más relevantes en la clasificación de los clientes, ayudará objetivamente a la empresa a saber dónde puede invertir su dinero para retener al cliente. 
 
 La solución pasa por tener en cuenta el problema del desbalance de la muestra, predecir si un cliente abandonara la empresa y cuáles son las variables más importantes que influyen en que el cliente tome esa decisión.
 
-
 ## Solución
 
-Dado que el problema se perfila como un problema de clasificación binaria con aprendizaje, los algoritmos candidatos
+Dado que el problema se perfila como un problema de clasificación binaria con aprendizaje, ente los algoritmos candidatos
 son RandomForest, Gradient Boosting, MLPClassifier, SVC, LogisticRegression. 
 
 Para lo que se crea un cuaderno por cada modelo y uno para la comparación.
@@ -62,6 +53,14 @@ algoritmo RandomForest y la clase GridSearchCV que es una técnica de ajuste de 
 
 
 ## Preparación y depuración de los datos
+Entre las variables predictoras hay variables de tipo booleano, categóricas, enteras y continúas. Menos de 20 variables.
+
+La variable objetivo (churn) tiene dos valores válidos: No, Yes. Nos interesa predecir a los clientes con valor 'Yes', que abandonarán la empresa.
+De la observación de los datos proporcionados se observa una muestra sesgada o con desbalance a favor de la clase negativa 'No', con más del 75%. 
+
+Esto puede dificultar el aprendizaje del modelo al contar con pocos clientes con valor 'Yes' en la variable objetivo, en comparación 
+con el valor 'No' que es la clase mayoritaria
+
 Al cargarse los datos se encuentran valores omitidos en la penúltima columna "TotalCharge". 
 
 * Cargos totales vacíos, los pongo a 0.0, los visualice y coincide con que:
@@ -157,7 +156,7 @@ a partir de la comparación de la siguiente tabla:
 | SVC             | 0.563981 | 0.698829 |
 | RegressionLog   | 0.629423 | 0.763058 |
 
-![Cutomer churn - ROC_AUC](./assets/f1.png)
+![Score F1](./assets/f1.png)
 
 En el cuaderno también se muestran gráficos de barra para comparar ambas métricas por separado. Y se plotea un gráfico de 
 línea la curva roc-auc para cada algoritmo.
