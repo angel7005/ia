@@ -74,7 +74,9 @@ Se hace un análisis estadístico muy superficial: cantidad, media, desviación 
 que pendiente refinar un cuaderno con un análisis más profundo donde se utilizan otros estadígrafos como la correlación, tablas de contingencia, chi cuadrado., etc. y subirlo al repositorio.
 
 ## Datos de entrenamiento y pruebas
-Los datos se separan los primeros 90% para entrenamiento y el ultimo 10%. Ahora el 90% de entrenamiento se le dio a GridSearchCV, utilizando validación cruzada con 5, 7 y 9 particiones sobre el que se ajustaron los parámetros del modelo
+Los datos se separan los primeros 90% para entrenamiento y el ultimo 10% para prueba y validacion. Ahora el 90% de entrenamiento se le dio a 
+GridSearchCV, utilizando validación cruzada con 5, 7 y 9 particiones sobre el que se ajustaron los parámetros del modelo. El otro 10% se 
+para prueba y validacion.
 
 ## Seleccionar modelo y ajustar parámetros
 Se crea un cuaderno por cada modelo donde se van a optimizar sus parámetros. Utilizando GridSearchCV. Para luego comparar sus resultados.
