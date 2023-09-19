@@ -46,8 +46,6 @@ resultados de diferentes algoritmos (RandomForest, GradientBoosting, MLPClassifi
 Google para la recomendación de algoritmos alternativo al RandomForest y estos fueron los ganadores. El próximo paso sería
 actualizarme en algunos y conocer en otros de las ventajas y desventajas.
 
-Retomando el problema del desbalance de la muestra se valora entre las técnicas propuestas el remuestreo y ajuste de los parámetros del algoritmo dando más peso a la clase minoritaria ('Yes').
-
 El proyecto se desarrolla con Python como lenguaje de programación y las bibliotecas sklearn de scikit-learn. Principalmente con el 
 algoritmo RandomForest y la clase GridSearchCV que es una técnica de ajuste de hiperplanos para econtrar la combinación óptima de los parámetros del algoritmo y evitar el OverFitting o sobre ajuste utilizando la validación cruzada.
 
@@ -70,12 +68,13 @@ Al cargarse los datos se encuentran valores omitidos en la penúltima columna "T
     
 Se observan muchas variables categóricas, con las que los modelos no pueden trabajar. Se transforman en valores numéricas.
 
+Retomando el problema del desbalance de la muestra se valora entre las técnicas propuestas el remuestreo y ajuste de los parámetros del algoritmo dando más peso a la clase minoritaria ('Yes').
+
 Se hace un análisis estadístico muy superficial: cantidad, media, desviación estándar, mínimo, máximo, percentiles...
 que pendiente refinar un cuaderno con un análisis más profundo donde se utilizan otros estadígrafos como la correlación, tablas de contingencia, chi cuadrado., etc. y subirlo al repositorio.
 
-
 ## Datos de entrenamiento y pruebas
-Los datos de separaron los primeros 90% para entrenamiento y el ultimo 10% para prueba. Ahora el 90% de entrenamiento se le dio a GridSearchCV, utilizando validación cruzada con 5, 7 y 9 particiones sobre el que se ajustaron los parámetros del modelo
+Los datos se separan los primeros 90% para entrenamiento y el ultimo 10%. Ahora el 90% de entrenamiento se le dio a GridSearchCV, utilizando validación cruzada con 5, 7 y 9 particiones sobre el que se ajustaron los parámetros del modelo
 
 ## Seleccionar modelo y ajustar parámetros
 Se crea un cuaderno por cada modelo donde se van a optimizar sus parámetros. Utilizando GridSearchCV. Para luego comparar sus resultados.
