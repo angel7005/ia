@@ -84,6 +84,16 @@ Se crea un cuaderno por cada modelo donde se van a optimizar sus parámetros. Ut
 ### RandomForest
 Cuaderno ns-3.1.1-modelo-RandomForest.ipynb
 
+Basicamente se construye un conjunto aleatorio de arboles, se ejecutan en paralelo y se escoge la clase mas botada. 
+
+Entre sus ventajas esta la fortaleza ante el sobreajuste a los datos de entrenamiento en comparacion con los arboles de decision individuales.
+Sencilles en la configuracion de sus paramentros y un buen rendimiento con sus valores por defecto. 
+Funciona muy bien para problemas con alto numero de variables de entrada y y gran cantidad de datos de aprendisaje.
+Permite realizar una seleccion de variables de alta calidad.
+
+Entre sus desventajas se encuentra la lentitud del aprendisaje si se utilizan muchos arboles y mucha profundida.
+El modelo global no resulta interpretable por el usuario.
+
 ### Gradiente Boosting
 cuaderno ns-3.1.2-modelo-GradientBoosting.ipynb
 
@@ -92,6 +102,19 @@ Cuaderno ns-3.1.3-modelo-MLPClassifier.ipynb
 
 ### Soporte Vector Machine
 Cuaderno ns-3.1.4-modelo-SVC.ipynb
+ 
+Tiene como objetivo encontrar un hiperplano que separa las instancias de dos clases. Algo parecido a los metodos de regresion logistica. 
+La diferencia con otros metodos de separacion lineal es que entre todos los posibles hiperplanos que dividen las instancias en dos clases 
+se escoge el que tiene un margen maximo.
+
+Tiene como ventaja que alcanza grandes resultados predictivos en problemas complejos, asignando las variables en un espacio de variables 
+mas complejo, aplicando transformaciones no lineales y utilizando el clasificador svm lineal sobre estas nuevas variables.
+Muestran buen comportamiento con alto numero de variables e incluso cuando el numero de variable es mayor que e numero de instancias
+
+Como desventaja tenemos la complejidad para a la configuracion. Soluciones muy dependiente de los valores escogidos para el coste
+o cuan permisivo es para los errores de entrenamiento y la funcion kernel utilizada para transformar los datos del problema.
+Funciona solamente con variables numericas y problemas  de clasificacion binaria
+
 
 ### Regresión logística
 Cuaderno ns-3.1.5-modelo-LogisticRegression.ipynb
