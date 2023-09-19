@@ -188,7 +188,7 @@ En el cuaderno también se muestran gráficos de barra para comparar ambas métr
 línea la curva roc-auc para cada algoritmo.
 
 ![Ratio segun randomForest](./assets/rf_var.png)
-![Ratio segun regresionlogistica](./assets/rl_var.png)
+![Ratio segun regresionlogistica](./assets/lr_var.png)
 
 
 
