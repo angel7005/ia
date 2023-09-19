@@ -8,7 +8,7 @@
 	1. [RandomForest](#RandomForest)
 	2. [Gradiente Boosting](#Gradiente-Boosting)
 	3. [MLPClassifier](#MLPClassifier)
-        4. [SVC](#Cuaderno ns-3.1.4-modelo-SVC.ipynb)
+        4. [SVC](#Cuaderno SVC)(#Soporte-Vector-Machine)
 	5. [Regresión logística](#Regresion-logistica)
 6. [Entrenar modelo](#Entrenar-modelo)
 7. [Evaluar rendimiento](#Evaluar-rendimiento)
