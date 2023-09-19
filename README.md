@@ -182,10 +182,14 @@ a partir de la comparación de la siguiente tabla:
 
 ![Score F1](./assets/f1.png)
 
+![Score AUC](./assets/roc_auc_bar.png)
+
 En el cuaderno también se muestran gráficos de barra para comparar ambas métricas por separado. Y se plotea un gráfico de 
 línea la curva roc-auc para cada algoritmo.
 
-![Cutomer churn - ROC_AUC](./assets/roc_auc.png)
+![Ratio segun randomForest](./assets/rf_var.png)
+![Ratio segun regresionlogistica](./assets/rl_var.png)
+
 
 
 ## Conclusiones
