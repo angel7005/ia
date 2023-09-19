@@ -142,6 +142,8 @@ se muestran las variables más relevantes encontradas por RandomForest.
 |   0  |  gender             |     0.001007 |
 |   2  |  Partner            |     0.000798 |
 
+![Variables mas importantes](./assets/variables.png)
+
 ## Comparaciones entre modelos
 En el cuaderno ns-4-comparacion.ipynb se ejecutan los 5 algoritmos vistos anteriormente con los parámetros ya ajustados. 
 Se calculan, comparan y grafican las métricas f1 y roc-auc. El modelo de RandomForest muestra un mejor resultado para la clasificación, 
@@ -155,11 +157,13 @@ a partir de la comparación de la siguiente tabla:
 | SVC             | 0.563981 | 0.698829 |
 | RegressionLog   | 0.629423 | 0.763058 |
 
+![Cutomer churn - ROC_AUC](./assets/f1.png)
 
 En el cuaderno también se muestran gráficos de barra para comparar ambas métricas por separado. Y se plotea un gráfico de 
 línea la curva roc-auc para cada algoritmo.
 
-![Cutomer churn - ROC_AUC](./assets/f1.png)
+![Cutomer churn - ROC_AUC](./assets/roc_auc.png)
+
 
 ## Conclusiones
 1- Se trabajo con una muestra desbalanceada a favor de los casos negativos. Muestra que no se pudo Re muestrear. Por ello
