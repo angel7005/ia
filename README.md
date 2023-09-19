@@ -159,6 +159,7 @@ a partir de la comparación de la siguiente tabla:
 En el cuaderno también se muestran gráficos de barra para comparar ambas métricas por separado. Y se plotea un gráfico de 
 línea la curva roc-auc para cada algoritmo.
 
+![Cutomer churn - ROC_AUC](./assets/f1.png)
 
 ## Conclusiones
 1- Se trabajo con una muestra desbalanceada a favor de los casos negativos. Muestra que no se pudo Re muestrear. Por ello
