@@ -88,7 +88,7 @@ Basicamente se construye un conjunto aleatorio de arboles, se ejecutan en parale
 
 Entre sus ventajas esta la fortaleza ante el sobreajuste a los datos de entrenamiento en comparacion con los arboles de decision individuales.
 Sencilles en la configuracion de sus paramentros y un buen rendimiento con sus valores por defecto. 
-Funciona muy bien para problemas con alto numero de variables de entrada y y gran cantidad de datos de aprendisaje.
+Funciona muy bien para problemas con alto numero de variables de entrada y gran cantidad de datos de aprendisaje.
 Permite realizar una seleccion de variables de alta calidad.
 
 Entre sus desventajas se encuentra la lentitud del aprendisaje si se utilizan muchos arboles y mucha profundida.
