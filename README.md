@@ -165,7 +165,9 @@ se muestran las variables más relevantes encontradas por RandomForest.
 |   0  |  gender             |     0.001007 |
 |   2  |  Partner            |     0.000798 |
 
-![Variables mas importantes](./assets/variables.png)
+![Ratio segun randomForest](./assets/rf_var.png)
+![Ratio segun regresionlogistica](./assets/lr_var.png)
+
 
 ## Comparaciones entre modelos
 En el cuaderno ns-4-comparacion.ipynb se ejecutan los 5 algoritmos vistos anteriormente con los parámetros ya ajustados. 
@@ -187,9 +189,7 @@ a partir de la comparación de la siguiente tabla:
 En el cuaderno también se muestran gráficos de barra para comparar ambas métricas por separado. Y se plotea un gráfico de 
 línea la curva roc-auc para cada algoritmo.
 
-![Ratio segun randomForest](./assets/rf_var.png)
-![Ratio segun regresionlogistica](./assets/lr_var.png)
-
+![Variables mas importantes](./assets/roc_auc.png)
 
 
 ## Conclusiones
@@ -204,7 +204,7 @@ RandomForest y LogisticRegression. Modelos con mejores resultados.
 4- Personalmente no estoy satisfecho con la capacidad de discriminación del modelo LogisticRegression, pero teniendo 
 en cuenta la muestra y las condiciones de la misma es un buen punto de partida para enfrentar el problema propuesto.
 
-5- Entre las variables más relevantes que ayudan a clasificar a un cliente están el tipo de contrato, el pago mensual,
+5- Entre las variables más relevantes que ayudan a clasificar a un cliente están el tipo de contrato, el pago mensual, 
 el tiempo en la empresa y la seguridad online.
 
 ## Recomendaciones
